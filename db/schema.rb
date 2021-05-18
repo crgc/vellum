@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_201557) do
+ActiveRecord::Schema.define(version: 2021_05_18_204309) do
 
   create_table "film_viewings", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(version: 2021_05_18_201557) do
     t.index ["author_id"], name: "index_film_viewings_on_author_id"
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "groups_film_viewings", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "film_viewing_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["film_viewing_id"], name: "index_groups_film_viewings_on_film_viewing_id"
+    t.index ["group_id"], name: "index_groups_film_viewings_on_group_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -29,4 +46,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_201557) do
   end
 
   add_foreign_key "film_viewings", "users", column: "author_id"
+  add_foreign_key "groups", "users"
+  add_foreign_key "groups_film_viewings", "film_viewings"
+  add_foreign_key "groups_film_viewings", "groups"
 end
