@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_220457) do
+ActiveRecord::Schema.define(version: 2021_05_18_201557) do
+
+  create_table "film_viewings", force: :cascade do |t|
+    t.string "name"
+    t.float "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id", default: 1, null: false
+    t.index ["author_id"], name: "index_film_viewings_on_author_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -19,4 +28,5 @@ ActiveRecord::Schema.define(version: 2021_05_17_220457) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "film_viewings", "users", column: "author_id"
 end
