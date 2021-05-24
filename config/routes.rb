@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'sessions#destroy'
 
-  root "sessions#login"
+  root 'sessions#login'
 end
