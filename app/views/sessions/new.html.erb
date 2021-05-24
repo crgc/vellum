@@ -1,0 +1,7 @@
+<h1 class="my-5 text-center">Login</h1>
+<%= form_tag '/login', :id => 'new_session' do %>
+  <%= label_tag 'Name',''%>
+  <%= text_field_tag :name, nil, placeholder:'Name' %>
+  <hr>
+  <%= submit_tag 'Login',class:'btn btn-primary'%>
+<%end%>
