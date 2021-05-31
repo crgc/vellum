@@ -1,5 +1,30 @@
-<h1>New User</h1>
+<!--<h1>New User</h1>-->
 
-<%= render 'form', user: @user %>
+<%#= render 'form', user: @user %>
 
-<%= link_to 'Back', users_path %>
+<%#= link_to 'Back', users_path %>
+
+<div class="wrapper d-flex align-items-stretch">
+  <div id="content">
+    <div class="topbar">
+      <div class="custom-menu">
+        <button type="button" id="backToSplash" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l6-6m-6 6l6 6m-6-6h14"/> </svg>
+        </button>
+      </div>
+      <div class="topbar-center">
+        <div class="text-white text-uppercase fs-1">Sign up</div>
+      </div>
+      <div class="topbar-right mr-5">
+      </div>
+    </div>
+    <main class="main-content">
+      <div class="login-box text-center mx-1">
+        <form>
+          <input type="text" id="fname" name="fname" placeholder="@username" class="login-box-name">
+          <input type="submit" value="Sign up" class="login-box-btn btn btn-primary mt-4">
+        </form>
+      </div>
+    </main>
+  </div>
+</div>

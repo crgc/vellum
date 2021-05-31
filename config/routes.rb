@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :film_viewings
   resources :users
 
-  get 'login', to: 'sessions#login'
+  get 'splash', to: 'sessions#login'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
 

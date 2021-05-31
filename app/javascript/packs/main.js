@@ -14,6 +14,9 @@
 
 	$('#sidebarCollapse').on('click', function () {
       $('#sidebar').toggleClass('active');
-  });
+	});
 
+	$('#backToSplash').on('click', function () {
+		window.history.back();
+	});
 })(jQuery);
