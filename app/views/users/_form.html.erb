@@ -12,16 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name %>
+    <%= form.label :name, style: "display:none" %>
+    <%= form.text_field :name, placeholder: "@username", class: "login-box-name" %>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_area :email %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "login-box-btn btn btn-primary mt-4", value: "Sign up" %>
   </div>
 <% end %>
