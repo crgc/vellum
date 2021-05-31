@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%# provide(:title, "@#{@user.name}") %>
+<div class="user-profile d-flex flex-column align-items-center justify-content-center">
+  <div class="avatar my-4">
+    <img src="https://i1.sndcdn.com/avatars-000418309074-tbppko-t200x200.jpg" />
+  </div>
+  <h2 class="username"><%= "@#{@user.name}" %></h2>
+  <ul class="list-unstyled components mb-5">
+    <li>
+      <a href="#"><span class="fa fa-film mr-3"></span>All my viewings</a>
+    </li>
+    <li>
+      <a href="#"><span class="fa fa-film mr-3"></span>All my external viewings</a>
+    </li>
+    <li>
+      <a href="#"><span class="fa fa-object-group mr-3"></span>All groups</a>
+    </li>
+  </ul>
+</div>

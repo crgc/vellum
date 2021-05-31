@@ -17,6 +17,8 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
   <body>
+    <%= show_notice %>
+    <%= show_alert %>
     <%= yield %>
 
     <%= javascript_pack_tag 'main', 'data-turbolinks-track': 'reload' %>
