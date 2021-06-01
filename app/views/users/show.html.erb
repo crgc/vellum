@@ -6,13 +6,24 @@
   <h2 class="username"><%= "@#{@user.name}" %></h2>
   <ul class="list-unstyled components mb-5">
     <li>
-      <a href="#"><span class="fa fa-film mr-3"></span>All my viewings</a>
+      <%= link_to film_viewings_path do %>
+        <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my viewings
+      <% end %>
     </li>
     <li>
-      <a href="#"><span class="fa fa-film mr-3"></span>All my external viewings</a>
+      <%= link_to film_viewings_path do %>
+        <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my external viewings
+      <% end %>
     </li>
     <li>
-      <a href="#"><span class="fa fa-object-group mr-3"></span>All groups</a>
+      <%= link_to groups_path do %>
+        <%= content_tag :span, nil, class: 'fa fa-object-group mr-3' %>All groups
+      <% end %>
+    </li>
+    <li>
+      <%= link_to logout_path do %>
+        <%= content_tag :span, nil, class: 'fa fa-power-off mr-3' %>Log out
+      <% end %>
     </li>
   </ul>
 </div>

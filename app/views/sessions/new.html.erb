@@ -14,10 +14,10 @@
     </div>
     <main class="main-content">
       <div class="login-box text-center mx-1">
-        <form>
-          <input type="text" id="fname" name="fname" placeholder="@username" class="login-box-name">
-          <input type="submit" value="Log in" class="login-box-btn btn btn-primary mt-4">
-        </form>
+        <%= form_tag '/login', :id => 'new_session' do %>
+          <%= text_field_tag :name, nil, class: 'login-box-name', placeholder: '@username' %>
+          <%= submit_tag 'Log in', class:'login-box-btn btn btn-primary mt-4' %>
+        <% end %>
       </div>
     </main>
   </div>

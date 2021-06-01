@@ -18,7 +18,9 @@
   </head>
   <body>
     <%= show_notice %>
-    <%= show_alert %>
+    <% flash.each do |type, msg| %>
+      <%= content_tag :div, msg, class: build_alert_classes(type) %>
+    <% end %>
     <%= yield %>
 
     <%= javascript_pack_tag 'main', 'data-turbolinks-track': 'reload' %>
