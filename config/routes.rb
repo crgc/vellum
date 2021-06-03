@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :groups
-  resources :film_viewings
+  resources :film_viewings, only: %i[show destroy new create index]
   resources :users, only: %i[show destroy new create]
 
   get 'splash', to: 'sessions#login'
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'sessions#destroy'
 
-  root 'sessions#login'
+  root 'users#home'
 end

@@ -11,5 +11,11 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  def authenticate
+    return if logged_in?
+
+    redirect_to splash_path
+  end
+
   def signed_in_user; end
 end

@@ -43,33 +43,27 @@ button:focus {
 
 #sidebar {
   min-width: 280px;
-  background: linear-gradient(225deg, rgba(48, 132, 194, 1) 0%, rgba(19, 50, 95, 1) 35%, rgba(48, 132, 194, 1) 100%);
-  color: #fff;
+  background: linear-gradient(225deg, rgba(19, 50, 94, 1) 0%, rgba(31, 83, 135, 1) 35%, rgba(48, 132, 194, 1) 100%);
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
 }
 
-#sidebar .h6 {
-  color: #fff;
-}
-
 #sidebar.active {
   margin-left: -280px;
 }
 
-#sidebar h1 {
-  margin-bottom: 20px;
+#sidebar .username {
+  margin-bottom: 2rem;
   font-weight: 700;
+  color: #f7f1e3;
 }
 
-#sidebar h1 .logo {
-  color: #fff;
-}
-
-#sidebar ul.components {
-  padding: 0;
+#sidebar img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }
 
 #sidebar ul li {
@@ -80,19 +74,11 @@ button:focus {
   margin-left: 10px;
 }
 
-#sidebar ul li > ul li {
-  font-size: 14px;
-}
-
 #sidebar ul li a {
   padding: 10px 0;
   display: block;
   color: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#sidebar ul li a:hover {
-  color: #fff;
 }
 
 #sidebar ul li.active > a {

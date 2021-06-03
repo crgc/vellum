@@ -1,5 +1,6 @@
 class FilmViewingsController < ApplicationController
   before_action :set_film_viewing, only: %i[show edit update destroy]
+  before_action :authenticate
 
   # GET /film_viewings or /film_viewings.json
   def index
