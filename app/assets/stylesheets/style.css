@@ -109,8 +109,12 @@ a[data-toggle="collapse"] {
   position: fixed;
   top: 0;
   z-index: 10;
-  height: 50px;
+  height: 60px;
   width: 100%;
+}
+
+.topbar-center {
+  color: #f5f6fa;
 }
 
 main {
