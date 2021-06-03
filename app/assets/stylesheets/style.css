@@ -115,6 +115,8 @@ a[data-toggle="collapse"] {
 
 .topbar-center {
   color: #f5f6fa;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 main {
@@ -209,4 +211,22 @@ main {
 .user-profile ul li.active > a {
   background: transparent;
   color: #fff;
+}
+
+.scan-wrapper {
+  background: #5fb523;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.scan-btn {
+  color: #f5f6fa;
+  font-size: 18px;
+  font-weight: 400;
+  width: 90%;
+  border: #f5f6fa solid thin;
 }
