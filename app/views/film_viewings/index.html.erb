@@ -1,11 +1,11 @@
 <div class="wrapper d-flex align-items-stretch">
-  <nav id="sidebar">
+  <nav id="sidebar" class="active">
     <div class="p-4">
       <div class="profile-header text-center mt-4">
         <div class="avatar">
           <img src="https://i1.sndcdn.com/avatars-000418309074-tbppko-t200x200.jpg" />
         </div>
-        <h3 class="username mt-3">@aclerkofpomier</h3>
+        <h3 class="username mt-3"><%= "@#{current_user.name}" %></h3>
       </div>
       <ul class="list-unstyled components mb-5">
         <li>
@@ -32,7 +32,7 @@
     </div>
   </nav>
   <div id="content">
-    <div id="topbar">
+    <div class="topbar">
       <div class="custom-menu">
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12M6 12h12M6 16h12"/> </svg>
