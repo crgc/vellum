@@ -11,6 +11,10 @@
   font-family: "proximalight", sans-serif;
 }
 
+.text-dark-gray {
+  color: #434b54;
+}
+
 html,
 body {
   height: 100%;
@@ -120,7 +124,7 @@ a[data-toggle="collapse"] {
 }
 
 main {
-  margin: 4rem 0rem 0rem;
+  margin: 60px 0px 0px;
 }
 
 .login-box-name {
@@ -229,4 +233,57 @@ main {
   font-weight: 400;
   width: 90%;
   border: #f5f6fa solid thin;
+}
+
+.viewings-header-wrapper {
+  background: #fff;
+}
+
+.viewings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.viewings-container-wrapper {
+  margin: 12px 10px 0px 10px;
+}
+
+.viewings-container {
+  border-radius: 2px;
+  background: #fff;
+  margin-bottom: 12px;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewings-container img {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.viewing-detail {
+  margin-left: -2rem;
+}
+
+.viewing-detail p {
+  display: block;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.viewing-detail-date {
+  font-size: 13px;
+}
+
+.viewing-time {
+  font-size: 16px;
+  font-weight: 700;
 }
