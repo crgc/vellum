@@ -1,27 +1,20 @@
-<%= form_with(model: group) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: group) do |f| %>
+  <%= show_errors(group) %>
+  <ul>
+    <% group.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= f.label :avatar, style: 'display:none' %>
+    <%= f.file_field :avatar, direct_upload: true, accept: 'image/jpeg, image/gif, image/png'%>
   </div>
-
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= f.label :name, style: 'display:none' %>
+    <%= f.text_field :name, placeholder: 'Group name', class: 'login-box-name' %>
   </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit 'Create group', class: 'login-box-btn btn btn-primary mt-4' %>
   </div>
 <% end %>
