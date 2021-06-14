@@ -1,36 +1,5 @@
 <div class="wrapper d-flex align-items-stretch">
-  <nav id="sidebar" class="active">
-    <div class="p-4">
-      <div class="profile-header text-center mt-4">
-        <div class="avatar">
-          <img src="https://i1.sndcdn.com/avatars-000418309074-tbppko-t200x200.jpg" />
-        </div>
-        <h3 class="username mt-3"><%= "@#{current_user.name}" %></h3>
-      </div>
-      <ul class="list-unstyled components mb-5">
-        <li>
-          <%= link_to film_viewings_path do %>
-            <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my viewings
-          <% end %>
-        </li>
-        <li>
-          <%= link_to film_viewings_path do %>
-            <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my external viewings
-          <% end %>
-        </li>
-        <li>
-          <%= link_to groups_path do %>
-            <%= content_tag :span, nil, class: 'fa fa-object-group mr-3' %>All groups
-          <% end %>
-        </li>
-        <li>
-          <%= link_to logout_path do %>
-            <%= content_tag :span, nil, class: 'fa fa-power-off mr-3' %>Log out
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <%= render "shared/sidebar" %>
   <div id="content">
     <div class="topbar">
       <div class="custom-menu">
