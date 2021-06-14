@@ -287,3 +287,16 @@ main {
   font-size: 16px;
   font-weight: 700;
 }
+
+.creation-box form {
+  padding: 1rem;
+}
+
+.creation-box form input {
+  margin-top: 1rem;
+}
+
+.camera-icon {
+  width: 2em;
+  height: 2em;
+}
