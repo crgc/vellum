@@ -235,6 +235,10 @@ main {
   border: #f5f6fa solid thin;
 }
 
+.scan-btn a {
+  color: #fff;
+}
+
 .viewings-header-wrapper {
   background: #fff;
 }
@@ -269,11 +273,34 @@ main {
   margin-right: 0.5rem;
 }
 
+.group-container {
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 12px;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.group-container img {
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
 .viewing-detail {
   margin-left: -2rem;
 }
 
 .viewing-detail p {
+  display: block;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.group-detail p {
   display: block;
   margin-bottom: 0;
   font-weight: 600;

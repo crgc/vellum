@@ -1,0 +1,18 @@
+development:
+  cloud_name: dozjmvd3v
+  api_key: '313449623361792'
+  api_secret: M1NSpYToO3VmhVYdsUVUBiYxKys
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dozjmvd3v
+  api_key: '313449623361792'
+  api_secret: M1NSpYToO3VmhVYdsUVUBiYxKys
+  enhance_image_tag: true
+  static_file_support: false
+test:
+  cloud_name: dozjmvd3v
+  api_key: '313449623361792'
+  api_secret: M1NSpYToO3VmhVYdsUVUBiYxKys
+  enhance_image_tag: true
+  static_file_support: false

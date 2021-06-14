@@ -10,4 +10,8 @@ module ApplicationHelper
   def show_alert
     content_tag(:div, alert, class: 'alert-box') if alert
   end
+
+  def friendly_date(date)
+    date.stamp('11 Oct 1990')
+  end
 end

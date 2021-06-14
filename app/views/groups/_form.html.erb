@@ -13,7 +13,7 @@
         <path d="M12 8.167c-2.68 0-4.86 2.18-4.86 4.86s2.18 4.86 4.86 4.86 4.86-2.18 4.86-4.86-2.18-4.86-4.86-4.86zm2 5.583h-1.25V15c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-1.25H10c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h1.25V11c0-.414.336-.75.75-.75s.75.336.75.75v1.25H14c.414 0 .75.336.75.75s-.336.75-.75.75z"></path>
       </g>
     </svg>
-    <%= f.label :avatar, 'Upload picture' %>
+    <%= f.label :avatar, 'Upload picture', id: 'upload-label' %>
     <%= f.file_field :avatar, direct_upload: true, accept: 'image/jpeg, image/png', style: 'display: none' %>
   </div>
   <div class="field">
