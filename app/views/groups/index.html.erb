@@ -15,17 +15,7 @@
     </div>
     <main class="main-content pt-1">
       <div class="viewings-container-wrapper">
-        <% @groups.each do |group| %>
-          <div class="group-container">
-            <%= link_to group do %>
-              <%= image_tag(group.avatar) %>
-            <% end %>
-            <div class="group-detail text-muted ml-3">
-              <p class="mb-4"><%= group.name %></p>
-              <p class="viewing-detail-date"><time><%= friendly_date(group.created_at) %></time></p>
-            </div>
-          </div>
-        <% end %>
+        <%= render 'group' %>
       </div>
       <div class="scan-wrapper text-center">
         <div class="btn scan-btn my-3 py-3">
