@@ -9,4 +9,6 @@ class FilmViewing < ApplicationRecord
   validates :running_time, presence: true, numericality: { greater_than_or_equal_to: 15, less_than_or_equal_to: 540 }
 
   scope :most_recent, -> { order('created_at DESC') }
+  scope :created_by, -> (author) { includes(:author).where('author_id = ?',  author.id).joins(:groups_film_viewings) }
+  scope :created_by_unassigned, -> (author) { includes(:author).where('author_id = ?', author.id).left_outer_joins(:groups_film_viewings).where('group_id IS NULL') }
 end

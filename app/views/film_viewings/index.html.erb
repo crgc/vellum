@@ -17,20 +17,22 @@
       <div class="viewings-header-wrapper">
         <div class="viewings-header py-3 px-2">
           <div class="text-muted">Total viewing time</div>
-          <div class="text-dark-gray">5hrs</div>
+          <div class="text-dark-gray"><time><%= total_viewing_time(@film_viewings) %></time></div>
         </div>
       </div>
       <div class="viewings-container-wrapper">
-        <div class="viewings-container">
-          <%= image_tag('monsters.png', alt: '👻') %>
-          <div class="viewing-detail text-muted">
-            <p class="mb-4">The Mummy (1999)</p>
-            <p class="viewing-detail-date">12 April 2022</p>
+        <% @film_viewings.each do |film_viewing| %>
+          <div class="viewings-container">
+            <%= group_avatar(film_viewing.groups.take, film_viewing) %>
+            <div class="viewing-detail text-muted">
+              <p class="mb-4"><%= film_viewing.name %></p>
+              <p class="viewing-detail-date"><time><%= friendly_date(film_viewing.created_at) %></time></p>
+            </div>
+            <div class="viewing-time text-dark-gray">
+              <time><%= running_time_str(film_viewing.running_time) %></time>
+            </div>
           </div>
-          <div class="viewing-time text-dark-gray">
-            2h 4min
-          </div>
-        </div>
+        <% end %>
       </div>
       <div class="scan-wrapper text-center">
         <div class="btn scan-btn my-3 py-3">

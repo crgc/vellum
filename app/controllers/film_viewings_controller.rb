@@ -4,7 +4,12 @@ class FilmViewingsController < ApplicationController
 
   # GET /film_viewings or /film_viewings.json
   def index
-    @film_viewings = FilmViewing.all
+    @film_viewings = FilmViewing.created_by(current_user).most_recent
+  end
+
+  def unassigned
+    @film_viewings = FilmViewing.created_by_unassigned(current_user).most_recent
+    render 'index'
   end
 
   # GET /film_viewings/1 or /film_viewings/1.json
