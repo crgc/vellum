@@ -20,7 +20,7 @@ module FilmViewingsHelper
     if film_viewing.groups.any?
       image_tag group.avatar
     else
-      image_tag 'popcorn.png', class: 'ml-n2'
+      image_tag 'popcorn.png'
     end
   end
 end

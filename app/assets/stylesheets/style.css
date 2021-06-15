@@ -270,12 +270,15 @@ main {
   justify-content: space-between;
 }
 
+.viewings-container a {
+  margin-left: -.5rem;
+}
+
 .viewings-container img {
   max-width: 100px;
   max-height: 100px;
   width: auto;
   height: auto;
-  margin-right: 0.5rem;
 }
 
 .group-container {
