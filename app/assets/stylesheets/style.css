@@ -274,7 +274,7 @@ main {
 }
 
 .group-container {
-  border-radius: 5px;
+  border-radius: 2px;
   background: #fff;
   margin-bottom: 12px;
   display: flex;
@@ -283,11 +283,11 @@ main {
 }
 
 .group-container img {
-  max-width: 140px;
+  max-width: 130px;
   width: auto;
   height: auto;
   margin-right: 0.5rem;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .viewing-detail {
