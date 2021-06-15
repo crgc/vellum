@@ -41,6 +41,11 @@ button:focus {
   box-shadow: none !important;
 }
 
+hr {
+  margin-top: 0.5rem;
+  background: rgba(33, 37, 41, 0.1);
+}
+
 .wrapper {
   max-width: 100%;
 }
@@ -321,9 +326,39 @@ main {
 
 .creation-box form input {
   margin-top: 1rem;
+  border: none;
+}
+
+.new-film-viewing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-film-viewing form {
+  width: 90%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 0.5rem;
+}
+
+.new-film-viewing form .field {
+  border-bottom: #434b54 1px;
+}
+
+.new-film-viewing form input {
+  border: none;
 }
 
 .camera-icon {
   width: 2em;
   height: 2em;
+}
+
+.group-dropdown {
+  width: 80%;
+  height: 35px;
+  text-align: center;
+  margin-top: 0.5rem;
 }

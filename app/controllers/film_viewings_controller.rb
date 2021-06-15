@@ -21,10 +21,14 @@ class FilmViewingsController < ApplicationController
   # POST /film_viewings or /film_viewings.json
   def create
     @film_viewing = FilmViewing.new(film_viewing_params)
+    @film_viewing.author_id = current_user.id
 
     respond_to do |format|
       if @film_viewing.save
-        format.html { redirect_to @film_viewing, notice: 'Film viewing was successfully created.' }
+        group_id = params[:film_viewing][:group_id]
+        GroupsFilmViewing.create(group_id: group_id, film_viewing_id: @film_viewing.id) if group_id
+
+        format.html { redirect_to film_viewings_path }
         format.json { render :show, status: :created, location: @film_viewing }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +41,7 @@ class FilmViewingsController < ApplicationController
   def update
     respond_to do |format|
       if @film_viewing.update(film_viewing_params)
-        format.html { redirect_to @film_viewing, notice: 'Film viewing was successfully updated.' }
+        format.html { redirect_to @film_viewing }
         format.json { render :show, status: :ok, location: @film_viewing }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -64,6 +68,6 @@ class FilmViewingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def film_viewing_params
-    params.require(:film_viewing).permit(:name, :rating, :user_id)
+    params.require(:film_viewing).permit(:name, :running_time, :rating)
   end
 end

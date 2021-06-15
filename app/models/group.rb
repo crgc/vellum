@@ -6,4 +6,6 @@ class Group < ApplicationRecord
   has_one_attached :avatar, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 10, maximum: 30 }
+
+  scope :alphabetically, -> { order(:name) }
 end
