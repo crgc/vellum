@@ -1,19 +1,66 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @film_viewing.name %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @film_viewing.rating %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @film_viewing.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_film_viewing_path(@film_viewing) %> |
-<%= link_to 'Back', film_viewings_path %>
+<div class="wrapper d-flex align-items-stretch">
+  <div id="content">
+    <div class="topbar">
+      <div class="custom-menu">
+        <button type="button" id="backToSplash" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l6-6m-6 6l6 6m-6-6h14"/> </svg>
+        </button>
+      </div>
+      <div class="topbar-center">
+        <div class="text-uppercase fs-1">Details</div>
+      </div>
+      <div class="topbar-right mr-5">
+      </div>
+    </div>
+    <main class="main-content">
+      <div class="viewing-detail-container-wrapper">
+        <div class="viewing-detail-container">
+          <div class="viewing-detail-container-header">
+            <div class="viewing-detail-left">
+              <%= group_avatar(@film_viewing.groups.take, @film_viewing) %>
+              <div class="ml-2 text-muted fw-600"><%= @film_viewing.name %></div>
+            </div>
+            <div class="viewing-detail-right">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+                <path d="m135.78 50.46c0-2.01-1.52-3.259-4.564-3.748l-40.897-5.947-18.331-37.07c-1.031-2.227-2.363-3.34-3.992-3.34-1.629 0-2.96 1.113-3.992 3.34l-18.332 37.07-40.899 5.947c-3.041.489-4.562 1.738-4.562 3.748 0 1.141.679 2.445 2.037 3.911l29.656 28.841-7.01 40.736c-.109.761-.163 1.305-.163 1.63 0 1.141.285 2.104.855 2.893.57.788 1.425 1.181 2.566 1.181.978 0 2.064-.324 3.259-.977l36.58-19.229 36.583 19.229c1.142.652 2.228.977 3.258.977 1.089 0 1.916-.392 2.486-1.181.569-.788.854-1.752.854-2.893 0-.706-.027-1.249-.082-1.63l-7.01-40.736 29.574-28.841c1.414-1.412 2.119-2.716 2.119-3.911" transform="matrix(.12375 0 0 .12375 2.59 2.958)" fill="#fdbc4b"/>
+              </svg>
+              <span class="mt-1 ml-1"><%= @film_viewing.rating %></span>
+            </div>
+          </div>
+          <hr>
+          <div class="viewing-detail-authorship">
+            <div class="text-muted">Added by
+              <span class="fw-600 text-decoration-underline">
+                <%= link_to user_path(@film_viewing.author) do %>
+                  @<%= @film_viewing.author.name %>
+                <% end %>
+              </span>
+            </div>
+            <div class="d-flex">
+              <svg class="ml-n1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="#DFDFDF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 9v10a2 2 0 002 2h12a2 2 0 002-2V9M4 9V7a2 2 0 012-2h2M4 9h16m0 0V7a2 2 0 00-2-2h-2m0 0V3m0 2H8m0-2v2"/>
+              </svg>
+              <div class="text-light-gray ml-1"><%= friendly_date_detailed(@film_viewing.created_at) %></div>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <div class="text-muted fw-600 text-uppercase">Running time</div>
+            <div class="text-dark-gray fw-600">
+              <time><%= running_time_str(@film_viewing.running_time) %></time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="delete-wrapper text-center">
+        <div class="btn scan-btn my-3 py-3">
+          <%= link_to @film_viewing, method: :delete, data: { confirm: 'Are you sure you want to delete this Film Viewing?'} do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7v0a3 3 0 013-3v0a3 3 0 013 3v0M9 7h6M9 7H6m9 0h3m2 0h-2M4 7h2m0 0v11a2 2 0 002 2h8a2 2 0 002-2V7"/>
+            </svg>
+          <% end %>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
