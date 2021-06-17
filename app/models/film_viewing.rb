@@ -1,5 +1,5 @@
 class FilmViewing < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
 
   has_many :groups_film_viewings, dependent: :destroy
   has_many :groups, through: :groups_film_viewings, dependent: :destroy

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'users#home'
 
-  resources :groups, only: %i[show destroy new create index update edit]
+  resources :groups, only: %i[show destroy new create index]
   resources :film_viewings, only: %i[show destroy new create index]
-  resources :users, only: %i[show destroy new create]
+  resources :users, only: %i[show new create]
 end

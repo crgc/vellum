@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :film_viewings, dependent: :destroy
+  has_many :film_viewings, dependent: :destroy, foreign_key: :author_id
   has_many :groups, dependent: :destroy
 
   has_one_attached :avatar, dependent: :destroy
@@ -17,6 +17,6 @@ class User < ApplicationRecord
   end
 
   def random_director
-    %w[akerman coppola herzog kubrick kurosawa lucas lynch scorsese scott tarkovsky].sample
+    %w[akerman coppola herzog kubrick kurosawa lucas lynch hitchcock scott tarkovsky].sample
   end
 end

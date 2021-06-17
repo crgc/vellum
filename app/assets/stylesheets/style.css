@@ -68,6 +68,7 @@ hr {
 }
 
 #sidebar {
+  max-width: 280px;
   min-width: 280px;
   background: linear-gradient(225deg, rgba(19, 50, 94, 1) 0%, rgba(31, 83, 135, 1) 35%, rgba(48, 132, 194, 1) 100%);
   -webkit-transition: all 0.3s;
@@ -153,6 +154,10 @@ main {
 }
 
 .main-content {
+  overflow: scroll;
+}
+
+.main-content-mh {
   max-height: 658px;
   overflow: scroll;
 }
@@ -216,7 +221,7 @@ main {
 }
 
 .user-profile .username {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-weight: 700;
   color: #f7f1e3;
 }

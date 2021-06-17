@@ -8,4 +8,12 @@ module GroupsHelper
   def render_delete_group(group)
     render 'delete_group' if group.user.id == current_user.id
   end
+
+  def group_main_content_class(group)
+    if group.user.id == current_user.id
+      'main-content-mh'
+    else
+      'main-content'
+    end
+  end
 end
