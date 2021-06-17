@@ -23,6 +23,10 @@
   font-weight: 600;
 }
 
+.fs-14 {
+  font-size: 14px;
+}
+
 html,
 body {
   height: 100%;
@@ -308,7 +312,7 @@ main {
 }
 
 .viewing-detail {
-  margin-left: -2rem;
+  margin-left: -1rem;
 }
 
 .viewing-detail p {
@@ -430,4 +434,29 @@ main {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.group-detail-container {
+  border-radius: 2px;
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 1rem;
+}
+
+.group-detail-container hr {
+  height: 2px;
+  background: #fafafa;
+}
+
+.group-detail-header {
+  text-align: center;
+}
+
+.group-detail-header img {
+  max-width: 250px;
+  border-radius: 5px;
+}
+
+.group-film-viewings li {
+  margin-bottom: 0.6rem;
 }
