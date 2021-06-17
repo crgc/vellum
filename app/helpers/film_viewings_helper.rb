@@ -20,12 +20,8 @@ module FilmViewingsHelper
     if belongs_to_group?(film_viewing)
       image_tag group.avatar
     else
-      image_tag 'popcorn.png'
+      image_tag 'popcorn.png', class: 'mw-85'
     end
-  end
-
-  def viewing_anchor_class(film_viewing)
-    'ml-05' unless belongs_to_group?(film_viewing)
   end
 
   def render_delete_film_viewing(film_viewing)

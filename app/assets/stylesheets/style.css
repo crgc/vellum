@@ -27,8 +27,8 @@
   font-size: 14px;
 }
 
-.ml-05 {
-  margin-left: -.5rem;
+.mw-85 {
+  max-width: 85px !important;
 }
 
 html,
