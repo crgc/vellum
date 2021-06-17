@@ -2,9 +2,15 @@
   <div class="p-4">
     <div class="profile-header text-center mt-4">
       <div class="avatar">
-        <img src="https://i1.sndcdn.com/avatars-000418309074-tbppko-t200x200.jpg" />
+        <%= link_to current_user do %>
+          <%= user_profile_avatar(current_user) %>
+        <% end %>
       </div>
-      <h3 class="username mt-3"><%= "@#{current_user.name}" %></h3>
+      <h3 class="username mt-3">
+        <%= link_to current_user do %>
+          <%= "@#{current_user.name}" %>
+        <% end %>
+      </h3>
     </div>
     <ul class="list-unstyled components mb-5">
       <li>

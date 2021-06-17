@@ -82,6 +82,9 @@ hr {
 
 #sidebar .username {
   margin-bottom: 2rem;
+}
+
+#sidebar .username a {
   font-weight: 700;
   color: #f7f1e3;
 }
@@ -219,8 +222,7 @@ main {
 }
 
 .user-profile img {
-  height: 180px;
-  width: 180px;
+  max-width: 180px;
   border-radius: 50%;
 }
 

@@ -1,9 +1,14 @@
 <div class="user-profile d-flex flex-column align-items-center justify-content-center">
   <div class="avatar my-4">
-    <img src="https://i1.sndcdn.com/avatars-000418309074-tbppko-t200x200.jpg" />
+    <%= user_profile_avatar(@user) %>
   </div>
   <h2 class="username"><%= "@#{@user.name}" %></h2>
   <ul class="list-unstyled components mb-5">
+    <li>
+      <%= link_to new_film_viewing_path do %>
+        <%= content_tag :span, nil, class: 'fa fa-plus mr-3' %>Add film viewing
+      <% end %>
+    </li>
     <li>
       <%= link_to film_viewings_path do %>
         <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my viewings
@@ -12,6 +17,11 @@
     <li>
       <%= link_to film_viewings_unassigned_path do %>
         <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my external viewings
+      <% end %>
+    </li>
+    <li>
+      <%= link_to new_group_path do %>
+        <%= content_tag :span, nil, class: 'fa fa-plus-circle mr-3' %>Create group
       <% end %>
     </li>
     <li>
