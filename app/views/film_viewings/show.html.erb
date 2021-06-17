@@ -16,15 +16,7 @@
       <div class="viewing-detail-container-wrapper">
         <%= render 'film_viewing_detail' %>
       </div>
-      <div class="delete-wrapper text-center">
-        <div class="btn scan-btn my-3 py-3">
-          <%= link_to @film_viewing, method: :delete, data: { confirm: 'Are you sure you want to delete this Film Viewing?'} do %>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7v0a3 3 0 013-3v0a3 3 0 013 3v0M9 7h6M9 7H6m9 0h3m2 0h-2M4 7h2m0 0v11a2 2 0 002 2h8a2 2 0 002-2V7"/>
-            </svg>
-          <% end %>
-        </div>
-      </div>
+      <%= render_delete_film_viewing(@film_viewing) %>
     </main>
   </div>
 </div>

@@ -4,4 +4,8 @@ module GroupsHelper
 
     render html: '<hr>'.html_safe
   end
+
+  def render_delete_group(group)
+    render 'delete_group' if group.user.id == current_user.id
+  end
 end

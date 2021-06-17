@@ -23,4 +23,8 @@ module FilmViewingsHelper
       image_tag 'popcorn.png'
     end
   end
+
+  def render_delete_film_viewing(film_viewing)
+    render 'delete_film_viewing' if film_viewing.author.id == current_user.id
+  end
 end
