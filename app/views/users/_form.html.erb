@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :name, style: 'display: none' %>
-    <%= f.text_field :name, placeholder: '@username (e.g., @jack)', class: 'login-box-name', required: true %>
+    <%= f.text_field :name, placeholder: '@username (e.g., jack)', maxlength: 15, class: 'login-box-name', required: true %>
   </div>
   <div class="actions">
     <%= f.submit 'Sign up', class: 'login-box-btn btn btn-primary mt-4' %>
