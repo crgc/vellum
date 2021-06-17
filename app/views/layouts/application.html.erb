@@ -17,10 +17,6 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
   <body>
-    <%= show_notice %>
-    <% flash.each do |type, msg| %>
-      <%= content_tag :div, msg, class: build_alert_classes(type) %>
-    <% end %>
     <%= yield %>
 
     <%= javascript_pack_tag 'main', 'data-turbolinks-track': 'reload' %>

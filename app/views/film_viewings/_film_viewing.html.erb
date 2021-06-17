@@ -1,11 +1,13 @@
 <% @film_viewings.each do |film_viewing| %>
   <div class="viewings-container">
-    <%= link_to film_viewing, class: viewing_anchor_class(film_viewing) do %>
-      <%= group_avatar(film_viewing.groups.take, film_viewing) %>
-    <% end %>
-    <div class="viewing-detail text-muted">
-      <p class="mb-4"><%= film_viewing.name %></p>
-      <p class="viewing-detail-date"><time><%= friendly_date(film_viewing.created_at) %></time></p>
+    <div class="d-flex align-items-center">
+      <%= link_to film_viewing, class: viewing_anchor_class(film_viewing) do %>
+        <%= group_avatar(film_viewing.groups.take, film_viewing) %>
+      <% end %>
+      <div class="viewing-detail text-muted">
+        <p class="mb-4"><%= film_viewing.name %></p>
+        <p class="viewing-detail-date"><time><%= friendly_date(film_viewing.created_at) %></time></p>
+      </div>
     </div>
     <div class="d-flex flex-column mr-1">
       <div class="d-flex flex-row align-items-center mb-3">
