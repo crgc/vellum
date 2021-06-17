@@ -4,15 +4,17 @@
     <div class="mt-3 text-dark-gray fw-600"><%= @group.name %></div>
   </div>
   <hr>
-  <% @group.film_viewings.each do |film_viewing| %>
-    <ul class="group-film-viewings list-group">
-      <li class="d-flex justify-content-between fs-14">
-        <span class="d-flex flex-column"><small class="text-muted">Name</small><%= film_viewing.name %></span>
-        <span class="d-flex flex-column"><small class="text-muted">Running time</small><time><%= running_time_str(film_viewing.running_time) %></time></span>
-        <span class="d-flex flex-column"><small class="text-muted">Added by</small><span class="text-dark-gray">@<%= film_viewing.author.name %></span></span>
-      </li>
-    </ul>
-  <% end %>
+  <div class="container">
+    <% @group.film_viewings.each do |film_viewing| %>
+      <ul class="group-film-viewings row list-group">
+        <li class="d-flex justify-content-between fs-14">
+          <span class="d-flex flex-column col pr-0 pl-1"><small class="text-muted">Name</small><%= film_viewing.name %></span>
+          <span class="d-flex flex-column col pr-0 pl-1"><small class="text-muted">Running time</small><time><%= running_time_str(film_viewing.running_time) %></time></span>
+          <span class="d-flex flex-column col pr-0 pl-1"><small class="text-muted">Added by</small><span class="text-dark-gray">@<%= film_viewing.author.name %></span></span>
+        </li>
+      </ul>
+    <% end %>
+  </div>
   <%= group_detail_hr_tag(@group) %>
   <div class="viewing-detail-authorship text-center">
     <div class="text-muted">Created by

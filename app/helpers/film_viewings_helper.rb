@@ -17,14 +17,24 @@ module FilmViewingsHelper
   end
 
   def group_avatar(group, film_viewing)
-    if film_viewing.groups.any?
+    if belongs_to_group?(film_viewing)
       image_tag group.avatar
     else
       image_tag 'popcorn.png'
     end
   end
 
+  def viewing_anchor_class(film_viewing)
+    'ml-05' unless belongs_to_group?(film_viewing)
+  end
+
   def render_delete_film_viewing(film_viewing)
     render 'delete_film_viewing' if film_viewing.author.id == current_user.id
+  end
+
+  private
+
+  def belongs_to_group?(film_viewing)
+    film_viewing.groups.any?
   end
 end

@@ -8,6 +8,11 @@
     </div>
     <ul class="list-unstyled components mb-5">
       <li>
+        <%= link_to new_film_viewing_path do %>
+          <%= content_tag :span, nil, class: 'fa fa-plus mr-3' %>Add film viewing
+        <% end %>
+      </li>
+      <li>
         <%= link_to film_viewings_path do %>
           <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my viewings
         <% end %>
@@ -15,6 +20,11 @@
       <li>
         <%= link_to film_viewings_unassigned_path do %>
           <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my external viewings
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_group_path do %>
+          <%= content_tag :span, nil, class: 'fa fa-plus-circle mr-3' %>Create group
         <% end %>
       </li>
       <li>

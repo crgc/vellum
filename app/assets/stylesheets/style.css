@@ -27,6 +27,10 @@
   font-size: 14px;
 }
 
+.ml-05 {
+  margin-left: -.5rem;
+}
+
 html,
 body {
   height: 100%;
@@ -281,10 +285,6 @@ main {
   padding: 0.5rem;
   align-items: center;
   justify-content: space-between;
-}
-
-.viewings-container a {
-  margin-left: -.5rem;
 }
 
 .viewings-container img {

@@ -14,7 +14,7 @@
     <hr>
   </div>
   <div class="field">
-    <%= f.number_field :rating, min: 1.0, max: 10.0, placeholder: 'How would you rate it? (1-10)', class: 'login-box-name', required: true %>
+    <%= f.number_field :rating, min: 1.0, max: 10.0, in: 1.0..10.0, step: 0.1, placeholder: 'How would you rate it? (1-10)', class: 'login-box-name', required: true %>
     <hr>
   </div>
   <div class="field">
@@ -22,6 +22,6 @@
     <%= f.collection_select(:group_id, Group.all.alphabetically, :id, :name, { include_blank: true }, { class: 'group-select group-dropdown' }) %>
   </div>
   <div class="actions">
-    <%= f.submit 'Create film viewing', class: 'btn btn-primary mt-4' %>
+    <%= f.submit 'Create film viewing', class: 'btn btn-primary mt-4 py-2' %>
   </div>
 <% end %>
