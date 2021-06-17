@@ -4,16 +4,16 @@ module FilmViewingsHelper
   end
 
   def running_time_str(running_time)
-    return '0h 0m' unless running_time > 0
+    return '0h 0m' unless running_time.positive?
 
-    hours, minutes = 0
+    hours = 0
     running_time_str = ''
 
     hours = (running_time / 60) if running_time >= 60
-    running_time_str = "#{hours}h " if hours > 0
+    running_time_str = "#{hours}h " if hours.positive?
 
     minutes = (running_time - (hours * 60))
-    running_time_str += "#{minutes}m"
+    running_time_str + "#{minutes}m"
   end
 
   def group_avatar(group, film_viewing)
