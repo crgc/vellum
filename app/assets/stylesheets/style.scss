@@ -1,7 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 @font-face {
   font-family: "BlendaScript";
-  src: url("BlendaScriptRegular.otf");
+  src: font-url("BlendaScriptRegular.otf"); /* stylelint-disable-line */
 }
 
 .proxima-bold {
