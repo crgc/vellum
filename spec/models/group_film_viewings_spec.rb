@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe GroupsFilmViewing, type: :model do
   let(:name) { 'name' }
-  let(:user) { User.create(name: 'mclark') }
+  let(:user) { User.create(name: 'mclark', id: 1) }
   let(:group) { Group.create(name: 'Drama', user_id: user.id) }
   let(:film_viewing_1) { FilmViewing.new(name: 'No Country for Old Men (2007)', running_time: 122, rating: 8.1) }
 
