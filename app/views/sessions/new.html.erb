@@ -15,7 +15,7 @@
     <main class="main-content">
       <div class="login-box text-center mx-1">
         <%= form_tag '/login', :id => 'new_session' do %>
-          <%= text_field_tag :name, nil, class: 'login-box-name', placeholder: '@username' %>
+          <%= text_field_tag :name, nil, class: 'login-box-name', placeholder: '@username', required: true %>
           <%= submit_tag 'Log in', class:'login-box-btn btn btn-primary mt-4' %>
         <% end %>
       </div>

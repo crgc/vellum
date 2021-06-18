@@ -1,7 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 @font-face {
   font-family: "BlendaScript";
-  src: url("BlendaScriptRegular.otf");
+  src: font-url("BlendaScriptRegular.otf"); /* stylelint-disable-line */
 }
 
 .proxima-bold {
@@ -66,6 +66,20 @@ hr {
 
 .wrapper {
   max-width: 100%;
+}
+
+.notice-wrapper {
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  background: rgb(231, 76, 60);
 }
 
 #sidebar {
@@ -137,9 +151,7 @@ a[data-toggle="collapse"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   top: 0;
-  z-index: 10;
   height: 60px;
   width: 100%;
 }
@@ -151,7 +163,7 @@ a[data-toggle="collapse"] {
 }
 
 main {
-  margin: 60px 0 0;
+  margin: 0;
 }
 
 .main-content {
@@ -350,7 +362,7 @@ main {
 }
 
 .creation-box form {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .creation-box form input {
