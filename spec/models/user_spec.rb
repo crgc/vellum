@@ -8,15 +8,15 @@ RSpec.describe User, type: :model do
   let(:fv_2) { FilmViewing.new(name: 'A Serious Man (2009)', running_time: 106, rating: 7.1) }
 
   describe 'can be created' do
-    it 'is valid if it has a name' do
+    it 'and is valid if it has a name' do
       expect(user).to be_valid
     end
 
-    it 'is invalid if name is not present' do
+    it 'but is invalid if a name is not present' do
       expect(no_name_user).to_not be_valid
     end
 
-    it 'can create a film viewing' do
+    it 'and be the author of a film viewing' do
       film_viewing = FilmViewing.new(name: 'Fury (2014)', running_time: 134, rating: 7.4)
       film_viewing.author_id = user.id
       film_viewing.save
@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
       expect(film_viewing).to be_valid
     end
 
-    it 'can have many film viewings' do
+    it 'and be the author of many film viewings' do
       fv_1.author_id = user.id
       fv_1.save
 
@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
       expect(FilmViewing.last.author_id).to eq(user.id)
     end
 
-    it 'can create a group' do
+    it 'and also can create a group' do
       group = user.groups.new(name: 'Drama')
       group.save
 
