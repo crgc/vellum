@@ -1,7 +1,7 @@
-<div class="app-home d-flex flex-column align-items-center">
+<div class="splash">
   <h1 class="app-name mb-3 font-weight-normal">Vellum</h1>
 </div>
-<div class="login-btn-section bottom-0 jusitfy-self-end position-absolute">
-  <%= link_to 'Log in', login_path, class: 'btn login-btn text-uppercase text-white bg-blue', method: :get %>
+<div class="login-btn-section px-3">
+  <%= link_to 'Log in', login_path, class: 'btn login-btn btn-primary text-uppercase', method: :get %>
   <%= link_to 'Sign up', new_user_path, class: 'btn login-btn text-uppercase text-secondary', method: :get %>
 </div>

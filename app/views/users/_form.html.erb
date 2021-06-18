@@ -1,27 +1,16 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model: user) do |f| %>
+  <%= show_errors(user) %>
+  <ul>
+    <% user.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name %>
+    <%= f.label :name, style: 'display: none' %>
+    <%= f.text_field :name, placeholder: '@username (e.g., jack)', maxlength: 15, class: 'login-box-name', required: true %>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_area :email %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit 'Sign up', class: 'login-box-btn btn btn-primary mt-4' %>
   </div>
 <% end %>

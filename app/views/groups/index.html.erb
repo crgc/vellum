@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.user_id %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+<div class="wrapper d-flex align-items-stretch">
+  <%= render "shared/sidebar" %>
+  <div id="content">
+    <div class="topbar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12M6 12h12M6 16h12"/> </svg>
+        </button>
+      </div>
+      <div class="topbar-center">
+        <div class="text-uppercase fs-1">Groups</div>
+      </div>
+      <div class="topbar-right mr-5">
+      </div>
+    </div>
+    <main class="main-content pt-1">
+      <div class="viewings-container-wrapper">
+        <%= render 'group' %>
+      </div>
+      <div class="scan-wrapper text-center">
+        <div class="btn scan-btn my-3 py-3">
+          <%= link_to 'Create new', new_group_path, class: 'text-uppercase fs-1' %>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

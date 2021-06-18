@@ -1,7 +1,24 @@
-<h1 class="my-5 text-center">Login</h1>
-<%= form_tag '/login', :id => 'new_session' do %>
-  <%= label_tag 'Name',''%>
-  <%= text_field_tag :name, nil, placeholder:'Name' %>
-  <hr>
-  <%= submit_tag 'Login',class:'btn btn-primary'%>
-<%end%>
+<div class="wrapper d-flex align-items-stretch">
+  <div id="content">
+    <div class="topbar">
+      <div class="custom-menu">
+        <button type="button" id="backToSplash" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l6-6m-6 6l6 6m-6-6h14"/> </svg>
+        </button>
+      </div>
+      <div class="topbar-center">
+        <div class="text-uppercase fs-1">Login</div>
+      </div>
+      <div class="topbar-right mr-5">
+      </div>
+    </div>
+    <main class="main-content">
+      <div class="login-box text-center mx-1">
+        <%= form_tag '/login', :id => 'new_session' do %>
+          <%= text_field_tag :name, nil, class: 'login-box-name', placeholder: '@username' %>
+          <%= submit_tag 'Log in', class:'login-box-btn btn btn-primary mt-4' %>
+        <% end %>
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Film Viewings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Rating</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @film_viewings.each do |film_viewing| %>
-      <tr>
-        <td><%= film_viewing.name %></td>
-        <td><%= film_viewing.rating %></td>
-        <td><%= film_viewing.user_id %></td>
-        <td><%= link_to 'Show', film_viewing %></td>
-        <td><%= link_to 'Edit', edit_film_viewing_path(film_viewing) %></td>
-        <td><%= link_to 'Destroy', film_viewing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Film Viewing', new_film_viewing_path %>
+<div class="wrapper d-flex align-items-stretch">
+  <%= render "shared/sidebar" %>
+  <div id="content">
+    <div class="topbar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12M6 12h12M6 16h12"/> </svg>
+        </button>
+      </div>
+      <div class="topbar-center">
+        <div class="text-uppercase fs-1">Film Viewings</div>
+      </div>
+      <div class="topbar-right mr-5">
+      </div>
+    </div>
+    <main class="main-content">
+      <div class="viewings-header-wrapper">
+        <div class="viewings-header py-3 px-2">
+          <div class="text-muted">Total viewing time</div>
+          <div class="text-dark-gray"><time><%= total_viewing_time(@film_viewings) %></time></div>
+        </div>
+      </div>
+      <div class="viewings-container-wrapper">
+        <%= render 'film_viewing' %>
+      </div>
+      <div class="scan-wrapper text-center">
+        <div class="btn scan-btn my-3 py-3">
+          <%= link_to 'Add new', new_film_viewing_path, class: 'text-uppercase fs-1' %>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  resources :groups
-  resources :film_viewings
-  resources :users
-
-  get 'login', to: 'sessions#login'
+  get 'splash', to: 'sessions#login'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-
   get 'logout', to: 'sessions#destroy'
+  get 'film_viewings/unassigned', to: 'film_viewings#unassigned'
 
-  root 'sessions#login'
+  root 'users#home'
+
+  resources :groups, only: %i[show destroy new create index]
+  resources :film_viewings, only: %i[show destroy new create index]
+  resources :users, only: %i[show new create]
 end
