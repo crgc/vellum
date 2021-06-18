@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 @font-face {
   font-family: "BlendaScript";
   src: url("BlendaScriptRegular.otf");
@@ -44,9 +45,9 @@ body {
 }
 
 button {
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
 }
 
 button:hover,
