@@ -14,7 +14,7 @@
       </g>
     </svg>
     <%= f.label :avatar, 'Upload picture', id: 'upload-label' %>
-    <%= f.file_field :avatar, direct_upload: true, accept: 'image/jpeg, image/png', style: 'display: none' %>
+    <%= f.file_field :avatar, direct_upload: true, accept: 'image/jpeg, image/png', style: 'display: none', required: true %>
   </div>
   <div class="field">
     <%= f.label :name, style: 'display: none' %>

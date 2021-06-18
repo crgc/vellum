@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(current_user)
     else
-      flash[:alert] = 'The username you entered did not match our records. Please double-check and try again.'
+      flash[:alert] = 'Invalid username.'
       redirect_to '/login'
     end
   end

@@ -3,12 +3,8 @@ module ApplicationHelper
     pluralize(model.errors.count, 'error') if model.errors.any?
   end
 
-  def show_notice
-    content_tag(:div, notice, class: 'notice-box') if notice
-  end
-
   def show_alert
-    content_tag(:div, alert, class: 'alert-box') if alert
+    content_tag(:div, alert, class: 'notice-wrapper topbar-center') if alert
   end
 
   def friendly_date(date)
