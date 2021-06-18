@@ -5,8 +5,8 @@ RSpec.describe Group, type: :model do
   let(:user) { User.create(name: 'mclark', id: 1) }
   let(:group) { Group.create(name: 'Drama', user_id: user.id) }
   let(:no_name_group) { Group.create(user_id: user.id) }
-  let(:film_viewing_1) { FilmViewing.new(name: 'No Country for Old Men (2007)', running_time: 122, rating: 8.1) }
-  let(:film_viewing_2) { FilmViewing.new(name: 'A Serious Man (2009)', running_time: 106, rating: 7.1) }
+  let(:film_viewing1) { FilmViewing.new(name: 'No Country for Old Men (2007)', running_time: 122, rating: 8.1) }
+  let(:film_viewing2) { FilmViewing.new(name: 'A Serious Man (2009)', running_time: 106, rating: 7.1) }
 
   describe 'when it is created by a user and has a name' do
     it 'is valid' do
@@ -25,15 +25,15 @@ RSpec.describe Group, type: :model do
 
   describe 'when it has one or more film viewings' do
     it 'is valid' do
-      film_viewing_1.group_ids = group.id
-      film_viewing_1.save
+      film_viewing1.group_ids = group.id
+      film_viewing1.save
 
-      film_viewing_2.group_ids = group.id
-      film_viewing_2.save
+      film_viewing2.group_ids = group.id
+      film_viewing2.save
 
       group.save
 
-      expect(group.film_viewing_ids).to eq([film_viewing_1.id, film_viewing_2.id])
+      expect(group.film_viewing_ids).to eq([film_viewing1.id, film_viewing2.id])
     end
   end
 
