@@ -1,0 +1,16 @@
+<%= form_with(model: user) do |f| %>
+  <%= show_errors(user) %>
+  <ul>
+    <% user.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+
+  <div class="field">
+    <%= f.label :name, style: 'display: none' %>
+    <%= f.text_field :name, placeholder: '@username (e.g., jack)', maxlength: 15, class: 'login-box-name', required: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Sign up', class: 'login-box-btn btn btn-primary mt-4' %>
+  </div>
+<% end %>

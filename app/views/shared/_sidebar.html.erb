@@ -1,0 +1,50 @@
+<nav id="sidebar" class="active">
+  <div class="mt-4">
+    <div class="profile-header text-center pt-4 px-4">
+      <div class="avatar">
+        <%= link_to current_user do %>
+          <%= user_profile_avatar(current_user) %>
+        <% end %>
+      </div>
+    </div>
+    <h4 class="username mt-3 text-center">
+      <%= link_to current_user do %>
+        <%= "@#{current_user.name}" %>
+      <% end %>
+    </h4>
+    <div class="px-4">
+      <ul class="list-unstyled components">
+        <li>
+          <%= link_to new_film_viewing_path do %>
+            <%= content_tag :span, nil, class: 'fa fa-plus mr-3' %>Add film viewing
+          <% end %>
+        </li>
+        <li>
+          <%= link_to film_viewings_path do %>
+            <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my viewings
+          <% end %>
+        </li>
+        <li>
+          <%= link_to film_viewings_unassigned_path do %>
+            <%= content_tag :span, nil, class: 'fa fa-film mr-3' %>All my external viewings
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_group_path do %>
+            <%= content_tag :span, nil, class: 'fa fa-plus-circle mr-3' %>Create group
+          <% end %>
+        </li>
+        <li>
+          <%= link_to groups_path do %>
+            <%= content_tag :span, nil, class: 'fa fa-object-group mr-3' %>All groups
+          <% end %>
+        </li>
+        <li>
+          <%= link_to logout_path do %>
+            <%= content_tag :span, nil, class: 'fa fa-power-off mr-3' %>Log out
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

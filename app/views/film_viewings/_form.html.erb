@@ -1,0 +1,27 @@
+<%= form_with(model: film_viewing) do |f| %>
+  <%= show_errors(film_viewing) %>
+  <ul>
+    <% film_viewing.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name of the film', class: 'login-box-name', required: true %>
+    <hr>
+  </div>
+  <div class="field">
+    <%= f.number_field :running_time, min: 15, max: 540, placeholder: "Film's running time (in minutes)", class: 'login-box-name', required: true %>
+    <hr>
+  </div>
+  <div class="field">
+    <%= f.number_field :rating, min: 1.0, max: 10.0, in: 1.0..10.0, step: 0.1, placeholder: 'How would you rate it? (1-10)', class: 'login-box-name', required: true %>
+    <hr>
+  </div>
+  <div class="field">
+    <%= f.label :group_id, class: 'input-group-text' %>
+    <%= f.collection_select(:group_id, Group.all.alphabetically, :id, :name, { include_blank: true }, { class: 'group-select group-dropdown' }) %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Create film viewing', class: 'btn btn-primary mt-4 py-2' %>
+  </div>
+<% end %>
