@@ -1,5 +1,5 @@
 <% @film_viewings.each do |film_viewing| %>
-  <div class="viewings-container">
+  <div class="viewings-container shadow-sm">
     <div class="d-flex align-items-center">
       <%= link_to film_viewing do %>
         <%= group_avatar(film_viewing.groups.take, film_viewing) %>
