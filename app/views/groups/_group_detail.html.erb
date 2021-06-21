@@ -8,7 +8,12 @@
     <% @group.film_viewings.each do |film_viewing| %>
       <ul class="group-film-viewings row list-group">
         <li class="d-flex justify-content-between fs-14">
-          <span class="d-flex flex-column col pr-0 pl-1"><small class="text-muted">Name</small><%= film_viewing.name %></span>
+          <span class="d-flex flex-column col pr-0 pl-1">
+            <small class="text-muted">Name</small>
+            <%= link_to film_viewing, style: 'color: #212529;' do %>
+              <%= film_viewing.name %>
+            <% end %>
+          </span>
           <span class="d-flex flex-column col pr-0 pl-1"><small class="text-muted">Running time</small><time><%= running_time_str(film_viewing.running_time) %></time></span>
           <span class="d-flex flex-column col pr-0 pl-1"><small class="text-muted">Added by</small><span class="text-dark-gray">@<%= film_viewing.author.name %></span></span>
         </li>
@@ -18,11 +23,7 @@
   <%= group_detail_hr_tag(@group) %>
   <div class="viewing-detail-authorship text-center">
     <div class="text-muted">Created by
-      <span class="fw-600 text-decoration-underline">
-        <%= link_to user_path(@group.user) do %>
-          @<%= @group.user.name %>
-        <% end %>
-      </span>
+      <span class="fw-600">@<%= @group.user.name %></span>
     </div>
     <div class="d-flex justify-content-center">
       <svg class="ml-n1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
