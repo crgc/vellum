@@ -21,10 +21,9 @@
 
 Vellum lets registered users track their favorite films and group them into categories.
 
-
 ## Live Demo
 
-[vellum-mc.herokuapp.com](https://vellum-mc.herokuapp.com/)
+[vellum-mc.herokuapp.com](https://vellum-mc.herokuapp.com/) (Open in portrait mode or on a mobile browser)
 
 ## Getting started
 
